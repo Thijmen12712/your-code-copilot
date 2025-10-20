@@ -5,12 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Brain, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  
-  return (
-    <div className="min-h-screen gradient-bg">
+  return <div className="min-h-screen gradient-bg">
       <Navigation />
       
       {/* Hero Section */}
@@ -28,9 +25,7 @@ const Index = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            [Your tagline or mission statement will go here - something that captures your AI expertise and vision]
-          </p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">Turning AI ideas into real results.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg gap-2 group" asChild>
@@ -59,9 +54,7 @@ const Index = () => {
                 <Brain className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold">AI Research</h3>
-              <p className="text-muted-foreground">
-                [Description of your AI research work and focus areas]
-              </p>
+              <p className="text-muted-foreground">Exploring the frontiers of intelligence — where data meets discovery.</p>
             </Card>
 
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
@@ -69,9 +62,7 @@ const Index = () => {
                 <Sparkles className="w-6 h-6 text-accent" />
               </div>
               <h3 className="text-xl font-semibold">Innovation</h3>
-              <p className="text-muted-foreground">
-                [Description of your innovative projects and solutions]
-              </p>
+              <p className="text-muted-foreground">Turning bold ideas into breakthroughs that shape the future.</p>
             </Card>
 
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
@@ -79,9 +70,7 @@ const Index = () => {
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold">Implementation</h3>
-              <p className="text-muted-foreground">
-                [Description of how you bring AI solutions to life]
-              </p>
+              <p className="text-muted-foreground">From concept to code — making vision work in the real world.</p>
             </Card>
           </div>
         </div>
@@ -93,9 +82,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Let's Connect
           </h2>
-          <p className="text-muted-foreground text-lg">
-            [Your contact invitation and preferred contact methods will go here]
-          </p>
+          <p className="text-muted-foreground text-lg">Come in contact with us to book a free intake conversation</p>
           <div className="pt-4">
             <Button size="lg" className="bg-accent hover:bg-accent/90" onClick={() => setIsContactOpen(true)}>
               Contact Me
@@ -105,8 +92,6 @@ const Index = () => {
       </section>
       
       <ContactDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
