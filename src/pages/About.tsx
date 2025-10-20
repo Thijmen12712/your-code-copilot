@@ -10,7 +10,7 @@ const About = () => {
             <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               About Me
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Thijmen is een koning !</p>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Feijenoord #1</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
