@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Navigation from "@/components/Navigation";
+import ContactDialog from "@/components/ContactDialog";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Brain, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  
   return (
     <div className="min-h-screen gradient-bg">
       <Navigation />
@@ -35,8 +39,8 @@ const Index = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg border-primary/20 hover:bg-primary/10" asChild>
-              <a href="#contact">Get in Touch</a>
+            <Button size="lg" variant="outline" className="text-lg border-primary/20 hover:bg-primary/10" onClick={() => setIsContactOpen(true)}>
+              Get in Touch
             </Button>
           </div>
         </div>
@@ -93,12 +97,14 @@ const Index = () => {
             [Your contact invitation and preferred contact methods will go here]
           </p>
           <div className="pt-4">
-            <Button size="lg" className="bg-accent hover:bg-accent/90">
+            <Button size="lg" className="bg-accent hover:bg-accent/90" onClick={() => setIsContactOpen(true)}>
               Contact Me
             </Button>
           </div>
         </Card>
       </section>
+      
+      <ContactDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
     </div>
   );
 };
