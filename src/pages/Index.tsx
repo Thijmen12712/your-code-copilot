@@ -5,8 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Brain, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const featuresReveal = useScrollReveal();
+  const contactReveal = useScrollReveal();
+  
   return <div className="min-h-screen gradient-bg">
       <Navigation />
       
@@ -42,7 +46,14 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="container mx-auto px-6 py-20">
+      <section 
+        ref={featuresReveal.ref}
+        className={`container mx-auto px-6 py-20 transition-all duration-1000 ${
+          featuresReveal.isVisible 
+            ? "opacity-100 blur-0" 
+            : "opacity-30 blur-md"
+        }`}
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             What I Do
@@ -77,7 +88,15 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="container mx-auto px-6 py-20">
+      <section 
+        ref={contactReveal.ref}
+        id="contact" 
+        className={`container mx-auto px-6 py-20 transition-all duration-1000 ${
+          contactReveal.isVisible 
+            ? "opacity-100 blur-0" 
+            : "opacity-30 blur-md"
+        }`}
+      >
         <Card className="glass-card max-w-2xl mx-auto p-12 text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Let's Connect
