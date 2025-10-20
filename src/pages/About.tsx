@@ -1,9 +1,7 @@
 import Navigation from "@/components/Navigation";
 import { Card } from "@/components/ui/card";
-
 const About = () => {
-  return (
-    <div className="min-h-screen gradient-bg">
+  return <div className="min-h-screen gradient-bg">
       <Navigation />
       
       <main className="container mx-auto px-6 pt-32 pb-20">
@@ -20,36 +18,26 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-6">
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-transform duration-300">
               <h2 className="text-2xl font-semibold text-primary">Background</h2>
-              <p className="text-muted-foreground">
-                [Your professional background and experience]
-              </p>
+              <p className="text-muted-foreground">I come from a strong foundation in AI and technology, blending research with real-world problem solving. My experience spans data-driven innovation, intelligent automation, and developing scalable solutions that make an impact.</p>
             </Card>
 
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-transform duration-300">
               <h2 className="text-2xl font-semibold text-primary">Expertise</h2>
-              <p className="text-muted-foreground">
-                [Your areas of expertise and specialization]
-              </p>
+              <p className="text-muted-foreground">Artificial Intelligence, Machine Learning, and Automation — with a focus on turning complex challenges into smart, practical systems. I specialize in transforming innovative ideas into working technologies that deliver real value.</p>
             </Card>
 
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-transform duration-300">
               <h2 className="text-2xl font-semibold text-primary">Mission</h2>
-              <p className="text-muted-foreground">
-                [Your mission and what drives you]
-              </p>
+              <p className="text-muted-foreground">To bridge the gap between AI research and everyday use — creating tools and systems that are not only intelligent but accessible, reliable, and impactful.</p>
             </Card>
 
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-transform duration-300">
               <h2 className="text-2xl font-semibold text-primary">Vision</h2>
-              <p className="text-muted-foreground">
-                [Your vision for the future]
-              </p>
+              <p className="text-muted-foreground">A future where AI empowers creativity, enhances decision-making, and drives progress across every field — responsibly and sustainably.</p>
             </Card>
           </div>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
