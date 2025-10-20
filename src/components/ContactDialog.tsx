@@ -96,7 +96,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
-              placeholder="Tell me about your project or question..."
+              placeholder="Thijmen is een koning"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
