@@ -29,6 +29,13 @@ const Navigation = () => {
             >
               <Link to="/about">About</Link>
             </Button>
+            <Button 
+              variant={isActive("/faq") ? "secondary" : "ghost"} 
+              asChild
+              className="transition-all"
+            >
+              <Link to="/faq">FAQ</Link>
+            </Button>
           </div>
         </div>
       </div>
