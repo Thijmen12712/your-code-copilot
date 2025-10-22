@@ -98,7 +98,7 @@ const WeeklyCalendar = () => {
       <Card className="glass-card p-8 border-primary/30">
         <div className="flex items-center justify-between gap-6 flex-col md:flex-row">
           <div className="space-y-2 text-center md:text-left">
-            <h3 className="text-xl font-semibold text-primary">Probeer ons systeem uit +31 970</h3>
+            <h3 className="text-xl font-semibold text-primary">Probeer ons systeem uit +31 97010253429</h3>
             <p className="text-muted-foreground">Maak een afspraak bij onze virtuele kapperszaak</p>
           </div>
           <div className="shrink-0">
