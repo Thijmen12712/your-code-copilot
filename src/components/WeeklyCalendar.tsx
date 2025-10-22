@@ -49,7 +49,7 @@ const WeeklyCalendar = () => {
   }];
   return <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Probeer het zelf uit en maak een afspraak!</h2>
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Maak een afspraak in onze calendar.</h2>
         <div className="flex gap-2">
           <Button variant="outline" size="icon" onClick={() => setCurrentWeek(currentWeek - 1)} className="border-primary/20 hover:bg-primary/10">
             <ChevronLeft className="h-4 w-4" />
@@ -98,8 +98,8 @@ const WeeklyCalendar = () => {
       <Card className="glass-card p-8 border-primary/30">
         <div className="flex items-center justify-between gap-6 flex-col md:flex-row">
           <div className="space-y-2 text-center md:text-left">
-            <h3 className="text-xl font-semibold text-primary">Probeer ons systeem uit +31 97010253429</h3>
-            <p className="text-muted-foreground">Maak een afspraak bij onze virtuele kapperszaak</p>
+            <h3 className="text-xl font-semibold text-primary">Probeer ons systeem uit en bel met+31 97010253429</h3>
+            <p className="text-muted-foreground">Maak een afspraak bij onze virtuele kapperszaak.</p>
           </div>
           <div className="shrink-0">
             <div className="px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium">
