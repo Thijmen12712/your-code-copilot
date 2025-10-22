@@ -45,9 +45,7 @@ const Index = () => {
       {/* Features Section */}
       <section ref={featuresReveal.ref} className={`container mx-auto px-6 py-20 transition-all duration-1000 ${featuresReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            What I Do
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Wat wij doen</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
@@ -55,23 +53,23 @@ const Index = () => {
                 <Brain className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold">AI Research</h3>
-              <p className="text-muted-foreground">Exploring the frontiers of intelligence — where data meets discovery.</p>
+              <p className="text-muted-foreground">Wij staan vooraan in AI onderzoek en bieden de laatste AI tech voor uw bedrijf aan.</p>
             </Card>
 
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
               <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
                 <Sparkles className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold">Innovation</h3>
-              <p className="text-muted-foreground">Turning bold ideas into breakthroughs that shape the future.</p>
+              <h3 className="text-xl font-semibold">AI Call Agents</h3>
+              <p className="text-muted-foreground">Wij maken gepersonaliseerde AI call agents voor elk bedrijf.</p>
             </Card>
 
             <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
               <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
                 <Zap className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold">Implementation</h3>
-              <p className="text-muted-foreground">From concept to code — making vision work in the real world.</p>
+              <h3 className="text-xl font-semibold">Implementatie</h3>
+              <p className="text-muted-foreground">Momenteel zijn wij het meest gefocust op AI receptionisten voor locale bedrijven.</p>
             </Card>
           </div>
         </div>
@@ -85,14 +83,10 @@ const Index = () => {
       {/* Contact Section */}
       <section ref={contactReveal.ref} id="contact" className={`container mx-auto px-6 py-20 transition-all duration-1000 ${contactReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
         <Card className="glass-card max-w-2xl mx-auto p-12 text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Let's Connect
-          </h2>
-          <p className="text-muted-foreground text-lg">Come in contact with us to book a free intake conversation</p>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Contact ons</h2>
+          <p className="text-muted-foreground text-lg">Kom in contact en boek een gratis intake gesprek</p>
           <div className="pt-4">
-            <Button size="lg" className="bg-accent hover:bg-accent/90" onClick={() => setIsContactOpen(true)}>
-              Contact Me
-            </Button>
+            <Button size="lg" className="bg-accent hover:bg-accent/90" onClick={() => setIsContactOpen(true)}>Contact ons</Button>
           </div>
         </Card>
       </section>

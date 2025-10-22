@@ -49,7 +49,7 @@ const WeeklyCalendar = () => {
   }];
   return <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Maak een afspraak in onze calendar.</h2>
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Maak een afspraak in onze calender</h2>
         <div className="flex gap-2">
           <Button variant="outline" size="icon" onClick={() => setCurrentWeek(currentWeek - 1)} className="border-primary/20 hover:bg-primary/10">
             <ChevronLeft className="h-4 w-4" />
