@@ -12,7 +12,6 @@ const Index = () => {
   const featuresReveal = useScrollReveal();
   const calendarReveal = useScrollReveal();
   const contactReveal = useScrollReveal();
-  
   return <div className="min-h-screen gradient-bg">
       <Navigation />
       
@@ -26,12 +25,10 @@ const Index = () => {
           </div>
           
           <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              ThijmenAI
-            </span>
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Vocari AI</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">Turning AI ideas into real results.</p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">The toekomst van klantcontact spreekt.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg gap-2 group" asChild>
@@ -40,22 +37,13 @@ const Index = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg border-primary/20 hover:bg-primary/10" onClick={() => setIsContactOpen(true)}>
-              Get in Touch
-            </Button>
+            <Button size="lg" variant="outline" className="text-lg border-primary/20 hover:bg-primary/10" onClick={() => setIsContactOpen(true)}>Contact </Button>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section 
-        ref={featuresReveal.ref}
-        className={`container mx-auto px-6 py-20 transition-all duration-1000 ${
-          featuresReveal.isVisible 
-            ? "opacity-100 blur-0" 
-            : "opacity-30 blur-md"
-        }`}
-      >
+      <section ref={featuresReveal.ref} className={`container mx-auto px-6 py-20 transition-all duration-1000 ${featuresReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             What I Do
@@ -90,27 +78,12 @@ const Index = () => {
       </section>
 
       {/* Calendar Section */}
-      <section 
-        ref={calendarReveal.ref}
-        className={`container mx-auto px-6 py-20 transition-all duration-1000 ${
-          calendarReveal.isVisible 
-            ? "opacity-100 blur-0" 
-            : "opacity-30 blur-md"
-        }`}
-      >
+      <section ref={calendarReveal.ref} className={`container mx-auto px-6 py-20 transition-all duration-1000 ${calendarReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
         <CalendarSection />
       </section>
 
       {/* Contact Section */}
-      <section 
-        ref={contactReveal.ref}
-        id="contact" 
-        className={`container mx-auto px-6 py-20 transition-all duration-1000 ${
-          contactReveal.isVisible 
-            ? "opacity-100 blur-0" 
-            : "opacity-30 blur-md"
-        }`}
-      >
+      <section ref={contactReveal.ref} id="contact" className={`container mx-auto px-6 py-20 transition-all duration-1000 ${contactReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
         <Card className="glass-card max-w-2xl mx-auto p-12 text-center space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Let's Connect
