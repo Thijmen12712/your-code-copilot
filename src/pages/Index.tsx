@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import ContactDialog from "@/components/ContactDialog";
+import CalendarSection from "@/components/CalendarSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Sparkles, Brain, Zap } from "lucide-react";
@@ -9,6 +10,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const featuresReveal = useScrollReveal();
+  const calendarReveal = useScrollReveal();
   const contactReveal = useScrollReveal();
   
   return <div className="min-h-screen gradient-bg">
@@ -85,6 +87,18 @@ const Index = () => {
             </Card>
           </div>
         </div>
+      </section>
+
+      {/* Calendar Section */}
+      <section 
+        ref={calendarReveal.ref}
+        className={`container mx-auto px-6 py-20 transition-all duration-1000 ${
+          calendarReveal.isVisible 
+            ? "opacity-100 blur-0" 
+            : "opacity-30 blur-md"
+        }`}
+      >
+        <CalendarSection />
       </section>
 
       {/* Contact Section */}
