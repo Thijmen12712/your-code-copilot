@@ -2,9 +2,13 @@ import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 const WeeklyCalendar = () => {
   const [currentWeek, setCurrentWeek] = useState(0);
+  const [appointments, setAppointments] = useState<any[]>([]);
+  const { toast } = useToast();
 
   // Generate hours (8 AM to 8 PM)
   const hours = Array.from({
@@ -30,23 +34,47 @@ const WeeklyCalendar = () => {
   };
   const weekDates = getWeekDates(currentWeek);
 
-  // Sample appointments (you can replace this with Google Calendar data)
-  const appointments = [{
-    day: 1,
-    hour: 10,
-    duration: 1,
-    title: "Team Meeting"
-  }, {
-    day: 2,
-    hour: 14,
-    duration: 2,
-    title: "Client Call"
-  }, {
-    day: 4,
-    hour: 9,
-    duration: 1,
-    title: "Code Review"
-  }];
+  // Fetch appointments from database
+  useEffect(() => {
+    const fetchAppointments = async () => {
+      const { data, error } = await supabase
+        .from('appointments')
+        .select('*');
+      
+      if (error) {
+        console.error('Error fetching appointments:', error);
+        toast({
+          title: "Error",
+          description: "Failed to load appointments",
+          variant: "destructive"
+        });
+      } else {
+        setAppointments(data || []);
+      }
+    };
+
+    fetchAppointments();
+
+    // Subscribe to realtime updates
+    const channel = supabase
+      .channel('appointments-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'appointments'
+        },
+        () => {
+          fetchAppointments();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [toast]);
   return <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Maak een afspraak in onze calender</h2>
@@ -77,16 +105,23 @@ const WeeklyCalendar = () => {
                 <div className="p-4 text-sm text-muted-foreground font-medium">
                   {hour === 12 ? '12 PM' : hour > 12 ? `${hour - 12} PM` : `${hour} AM`}
                 </div>
-                {weekDates.map((_, dayIndex) => {
-              const appointment = appointments.find(apt => apt.day === dayIndex && apt.hour === hour);
+                {weekDates.map((date, dayIndex) => {
+              // Find appointments for this day and hour
+              const dayAppointments = appointments.filter(apt => {
+                const aptDate = new Date(apt.day);
+                return aptDate.toDateString() === date.fullDate.toDateString() && apt.hour === hour;
+              });
+              
               return <div key={dayIndex} className="min-h-[60px] p-2 border-l border-border/30 hover:bg-accent/10 transition-colors relative" style={{
                 background: hour % 2 === 0 ? 'hsl(var(--secondary) / 0.3)' : 'transparent'
               }}>
-                      {appointment && <div className="absolute inset-2 bg-primary text-primary-foreground rounded p-2 text-xs font-medium overflow-hidden" style={{
-                  height: `${appointment.duration * 60}px`
-                }}>
-                          {appointment.title}
-                        </div>}
+                      {dayAppointments.map((apt, idx) => (
+                        <div key={idx} className="absolute inset-2 bg-primary text-primary-foreground rounded p-2 text-xs font-medium overflow-hidden" style={{
+                          height: `${apt.duration}px`
+                        }}>
+                          {apt.summary}
+                        </div>
+                      ))}
                     </div>;
             })}
               </div>)}

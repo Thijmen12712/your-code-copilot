@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      appointments: {
+        Row: {
+          created_at: string
+          day: string
+          duration: number
+          hour: number
+          id: string
+          summary: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          day: string
+          duration: number
+          hour: number
+          id?: string
+          summary: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          day?: string
+          duration?: number
+          hour?: number
+          id?: string
+          summary?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       google_calendar_tokens: {
         Row: {
           access_token: string
