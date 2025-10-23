@@ -116,8 +116,8 @@ const WeeklyCalendar = () => {
                 background: hour % 2 === 0 ? 'hsl(var(--secondary) / 0.3)' : 'transparent'
               }}>
                       {dayAppointments.map((apt, idx) => (
-                        <div key={idx} className="absolute inset-0.5 bg-primary text-primary-foreground rounded-md p-2 text-sm font-semibold shadow-md flex items-center justify-center text-center leading-tight" style={{
-                          height: `${apt.duration * 1.3}px`
+                        <div key={idx} className="absolute top-0.5 left-0.5 right-0.5 bg-primary text-primary-foreground rounded-md p-2 text-sm font-semibold shadow-md flex items-center justify-center text-center leading-tight" style={{
+                          height: `${apt.duration}px`
                         }}>
                           <span className="line-clamp-2">{apt.summary}</span>
                         </div>
