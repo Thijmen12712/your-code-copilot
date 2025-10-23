@@ -112,12 +112,12 @@ const WeeklyCalendar = () => {
                 return aptDate.toDateString() === date.fullDate.toDateString() && apt.hour === hour;
               });
               
-              return <div key={dayIndex} className="min-h-[80px] p-1 border-l border-border/30 hover:bg-accent/10 transition-colors relative" style={{
+              return <div key={dayIndex} className="h-20 p-1 border-l border-border/30 hover:bg-accent/10 transition-colors relative" style={{
                 background: hour % 2 === 0 ? 'hsl(var(--secondary) / 0.3)' : 'transparent'
               }}>
                       {dayAppointments.map((apt, idx) => (
                         <div key={idx} className="absolute top-0.5 left-0.5 right-0.5 bg-primary text-primary-foreground rounded-md p-2 text-sm font-semibold shadow-md flex items-center justify-center text-center leading-tight" style={{
-                          height: `${apt.duration}px`
+                          height: `${(apt.duration / 60) * 80}px`
                         }}>
                           <span className="line-clamp-2">{apt.summary}</span>
                         </div>
