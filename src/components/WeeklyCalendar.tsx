@@ -117,9 +117,9 @@ const WeeklyCalendar = () => {
               }}>
                       {dayAppointments.map((apt, idx) => (
                         <div key={idx} className="absolute inset-0.5 bg-primary text-primary-foreground rounded-md p-2 text-sm font-semibold shadow-md flex items-center justify-center text-center leading-tight" style={{
-                          minHeight: `${Math.max(apt.duration * 1.3, 60)}px`
+                          height: `${apt.duration * 1.3}px`
                         }}>
-                          <span className="line-clamp-3">{apt.summary}</span>
+                          <span className="line-clamp-2">{apt.summary}</span>
                         </div>
                       ))}
                     </div>;
