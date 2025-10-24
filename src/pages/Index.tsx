@@ -4,15 +4,20 @@ import ContactDialog from "@/components/ContactDialog";
 import CalendarSection from "@/components/CalendarSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Brain, Zap } from "lucide-react";
+import { ArrowRight, Phone, Scissors, Sparkles, Zap, Target, Shield, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const featuresReveal = useScrollReveal();
-  const calendarReveal = useScrollReveal();
-  const contactReveal = useScrollReveal();
-  return <div className="min-h-screen gradient-bg">
+
+  return (
+    <div className="min-h-screen light-gradient-bg">
       <Navigation />
       
       {/* Hero Section */}
@@ -20,78 +25,198 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <div className="inline-block">
             <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-              AI Innovation & Research
+              Powered by Artificial Intelligence
             </span>
           </div>
           
           <h1 className="text-6xl md:text-7xl font-bold leading-tight">
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Vocari AI</span>
+            Vocari <span className="text-primary">AI</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">The toekomst van klantcontact spreekt.</p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+            Transform your business with cutting-edge artificial intelligence solutions
+          </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg gap-2 group" asChild>
+            <Button 
+              size="lg" 
+              className="text-lg gap-2" 
+              onClick={() => setIsContactOpen(true)}
+            >
+              <Phone className="w-5 h-5" />
+              Contact Me
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-lg border-2"
+              asChild
+            >
               <Link to="/about">
-                Learn More
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Find Out More
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg border-primary/20 hover:bg-primary/10" onClick={() => setIsContactOpen(true)}>Contact </Button>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section ref={featuresReveal.ref} className={`container mx-auto px-6 py-20 transition-all duration-1000 ${featuresReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Wat wij doen</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <Brain className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold">AI Research</h3>
-              <p className="text-muted-foreground">Wij staan vooraan in AI onderzoek en bieden de laatste AI tech voor uw bedrijf aan.</p>
-            </Card>
-
-            <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center group-hover:bg-accent/30 transition-colors">
-                <Sparkles className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold">AI Call Agents</h3>
-              <p className="text-muted-foreground">Wij maken gepersonaliseerde AI call agents voor elk bedrijf.</p>
-            </Card>
-
-            <Card className="glass-card p-8 space-y-4 hover:scale-105 transition-all duration-300 group">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
-                <Zap className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold">Implementatie</h3>
-              <p className="text-muted-foreground">Momenteel zijn wij het meest gefocust op AI receptionisten voor locale bedrijven.</p>
-            </Card>
+      {/* Try Our AI Agent Section */}
+      <section className="container mx-auto px-6 py-12">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="flex justify-center gap-6 mb-8">
+            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+              <Phone className="w-8 h-8 text-white" />
+            </div>
+            <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center">
+              <Scissors className="w-8 h-8 text-white" />
+            </div>
           </div>
+          
+          <h2 className="text-3xl md:text-4xl font-bold">Probeer onze AI Agent</h2>
+          <p className="text-lg text-muted-foreground">
+            Bel nu en maak een afspraak bij onze virtuele kapperszaak. Boek bijvoorbeeld een afspraak voor een knipbeurt in.
+          </p>
         </div>
       </section>
 
       {/* Calendar Section */}
-      <section ref={calendarReveal.ref} className={`container mx-auto px-6 py-20 transition-all duration-1000 ${calendarReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
+      <section className="container mx-auto px-6 py-12">
         <CalendarSection />
       </section>
 
-      {/* Contact Section */}
-      <section ref={contactReveal.ref} id="contact" className={`container mx-auto px-6 py-20 transition-all duration-1000 ${contactReveal.isVisible ? "opacity-100 blur-0" : "opacity-30 blur-md"}`}>
-        <Card className="glass-card max-w-2xl mx-auto p-12 text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Contact ons</h2>
-          <p className="text-muted-foreground text-lg">Kom in contact en boek een gratis intake gesprek</p>
-          <div className="pt-4">
-            <Button size="lg" className="bg-accent hover:bg-accent/90" onClick={() => setIsContactOpen(true)}>Contact ons</Button>
+      {/* Why Choose Vocari AI Section */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Why Choose <span className="font-bold">Vocari AI</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Cutting-edge artificial intelligence designed for modern businesses
+            </p>
           </div>
-        </Card>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="p-8 space-y-4 hover:shadow-lg transition-shadow bg-card border">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                <Sparkles className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold">Intelligent Solutions</h3>
+              <p className="text-muted-foreground">
+                Leverage advanced AI algorithms to solve complex business challenges with unprecedented efficiency.
+              </p>
+            </Card>
+
+            <Card className="p-8 space-y-4 hover:shadow-lg transition-shadow bg-card border">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold">Lightning Fast</h3>
+              <p className="text-muted-foreground">
+                Experience real-time processing and instant insights that keep your business ahead of the curve.
+              </p>
+            </Card>
+
+            <Card className="p-8 space-y-4 hover:shadow-lg transition-shadow bg-card border">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold">Precision Targeting</h3>
+              <p className="text-muted-foreground">
+                Achieve pinpoint accuracy in decision-making with data-driven AI recommendations.
+              </p>
+            </Card>
+
+            <Card className="p-8 space-y-4 hover:shadow-lg transition-shadow bg-card border">
+              <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold">Secure & Reliable</h3>
+              <p className="text-muted-foreground">
+                Enterprise-grade security ensuring your data and operations remain protected at all times.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
+              <HelpCircle className="w-10 h-10 text-primary" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Frequently Asked <span className="font-bold">Questions</span>
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Everything you need to know about Vocari AI
+            </p>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            <AccordionItem value="item-1" className="border rounded-lg px-6 bg-card">
+              <AccordionTrigger className="text-left font-semibold">
+                What services does Vocari AI offer?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Vocari AI provides cutting-edge AI call agents and receptionist solutions designed specifically for local businesses. We specialize in creating personalized AI solutions that handle customer interactions, appointments, and inquiries 24/7.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2" className="border rounded-lg px-6 bg-card">
+              <AccordionTrigger className="text-left font-semibold">
+                How long does implementation take?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Implementation typically takes 1-2 weeks depending on your specific requirements. We work closely with you to ensure a smooth integration with your existing systems and workflows.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3" className="border rounded-lg px-6 bg-card">
+              <AccordionTrigger className="text-left font-semibold">
+                Do you offer ongoing support?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Yes, we provide comprehensive ongoing support and maintenance. Our team is available to help you optimize your AI agents and ensure they continue to meet your business needs as they evolve.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-4" className="border rounded-lg px-6 bg-card">
+              <AccordionTrigger className="text-left font-semibold">
+                What industries do you work with?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                We primarily focus on local businesses including salons, barbershops, medical practices, law firms, and other service-based industries that benefit from automated appointment scheduling and customer service.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-5" className="border rounded-lg px-6 bg-card">
+              <AccordionTrigger className="text-left font-semibold">
+                How do I get started?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Getting started is easy! Simply contact us through our contact form or try our demo AI agent by calling the number provided. We'll schedule a free consultation to discuss your specific needs and create a customized solution.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-6" className="border rounded-lg px-6 bg-card">
+              <AccordionTrigger className="text-left font-semibold">
+                What are your pricing models?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                We offer flexible pricing models tailored to your business size and needs. Contact us for a personalized quote based on call volume, features required, and level of customization needed for your AI agent.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
       </section>
       
       <ContactDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
