@@ -19,7 +19,7 @@ const WeeklyCalendar = () => {
   const getWeekDates = (offset: number) => {
     const today = new Date();
     const first = today.getDate() - today.getDay() + offset * 7;
-    return Array.from({
+    const weekDates = Array.from({
       length: 7
     }, (_, i) => {
       const date = new Date(today.setDate(first + i));
@@ -28,11 +28,26 @@ const WeeklyCalendar = () => {
           weekday: 'short'
         }),
         date: date.getDate(),
+        month: date.toLocaleDateString('en-US', { month: 'short' }),
         fullDate: new Date(date)
       };
     });
+    return weekDates;
   };
+  
   const weekDates = getWeekDates(currentWeek);
+  
+  // Get current month and year from the first date of the week
+  const getCurrentMonthYear = () => {
+    if (weekDates.length === 0) return { month: '', year: '' };
+    const firstDate = weekDates[0].fullDate;
+    return {
+      month: firstDate.toLocaleDateString('en-US', { month: 'long' }),
+      year: firstDate.getFullYear()
+    };
+  };
+  
+  const { month, year } = getCurrentMonthYear();
 
   // Fetch appointments from database
   useEffect(() => {
@@ -79,7 +94,7 @@ const WeeklyCalendar = () => {
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div className="flex items-center gap-3">
           <Calendar className="w-8 h-8 text-primary" />
-          <h2 className="text-2xl md:text-3xl font-bold">October 2025</h2>
+          <h2 className="text-2xl md:text-3xl font-bold">{month} {year}</h2>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" size="icon" onClick={() => setCurrentWeek(currentWeek - 1)}>
@@ -99,7 +114,7 @@ const WeeklyCalendar = () => {
               <div className="text-sm font-medium text-muted-foreground p-2">Time</div>
               {weekDates.map((date, i) => <div key={i} className="text-center p-3 rounded-lg bg-secondary">
                   <div className="text-sm font-medium">{date.day}</div>
-                  <div className="text-xs text-muted-foreground">Oct {date.date}</div>
+                  <div className="text-xs text-muted-foreground">{date.month} {date.date}</div>
                 </div>)}
             </div>
 

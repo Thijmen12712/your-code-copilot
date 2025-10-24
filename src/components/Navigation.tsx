@@ -15,8 +15,11 @@ const Navigation = () => {
             <Button variant={isActive("/about") ? "secondary" : "ghost"} asChild className="transition-all">
               <Link to="/about">About</Link>
             </Button>
-            <Button variant={isActive("/faq") ? "secondary" : "ghost"} asChild className="transition-all">
-              <Link to="/faq">FAQ</Link>
+            <Button variant={isActive("/pricing") ? "secondary" : "ghost"} asChild className="transition-all">
+              <Link to="/pricing">Pricing</Link>
+            </Button>
+            <Button variant={isActive("/agent-test") ? "secondary" : "ghost"} asChild className="transition-all">
+              <Link to="/agent-test">Test Agent</Link>
             </Button>
           </div>
         </div>
