@@ -2,6 +2,8 @@ import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import ContactDialog from "@/components/ContactDialog";
 import CalendarSection from "@/components/CalendarSection";
+import SavingsCalculator from "@/components/SavingsCalculator";
+import AudioTestSection from "@/components/AudioTestSection";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Phone, Scissors, Sparkles, Zap, Target, Shield, HelpCircle } from "lucide-react";
@@ -84,6 +86,16 @@ const Index = () => {
       {/* Calendar Section */}
       <section className="container mx-auto px-6 py-12">
         <CalendarSection />
+      </section>
+
+      {/* Savings Calculator Section */}
+      <section className="container mx-auto px-6 py-20">
+        <SavingsCalculator />
+      </section>
+
+      {/* Audio Test Section */}
+      <section className="container mx-auto px-6 py-20">
+        <AudioTestSection />
       </section>
 
       {/* Why Choose Vocari AI Section */}
