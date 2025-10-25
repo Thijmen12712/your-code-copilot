@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Phone, Scissors, CheckCircle, Sparkles, Calendar } from "lucide-react";
 import { useState } from "react";
 import ContactDialog from "@/components/ContactDialog";
-import CalendarSection from "@/components/CalendarSection";
+import WeeklyCalendar from "@/components/WeeklyCalendar";
 
 const AgentTest = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -141,12 +141,12 @@ const AgentTest = () => {
                 Kijk hoe afspraken automatisch verschijnen nadat je belt
               </p>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200">
-                <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 <span className="text-sm font-medium text-green-700">Live updates - geen refresh nodig</span>
               </div>
             </div>
 
-            <CalendarSection />
+            <WeeklyCalendar />
           </div>
 
           {/* CTA Section */}
