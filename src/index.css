@@ -37,6 +37,9 @@ All colors MUST be HSL.
     --ring: 217 91% 60%;
     
     --radius: 0.75rem;
+    
+    --shadow-subtle: 0 2px 8px -2px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 4px 12px -3px hsl(var(--primary) / 0.2);
   }
 }
 

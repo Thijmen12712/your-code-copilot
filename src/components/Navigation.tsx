@@ -6,7 +6,10 @@ const Navigation = () => {
   return <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 backdrop-blur-md bg-background/80">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Vocari AI</Link>
+          <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent flex items-center gap-2">
+            Vocari AI
+            <span className="text-xs font-normal bg-primary/10 text-primary px-2 py-0.5 rounded-full border border-primary/20">beta</span>
+          </Link>
           
           <div className="flex items-center gap-2">
             <Button variant={isActive("/") ? "secondary" : "ghost"} asChild className="transition-all">

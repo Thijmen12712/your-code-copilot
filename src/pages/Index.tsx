@@ -29,8 +29,9 @@ const Index = () => {
             </span>
           </div>
           
-          <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-6xl md:text-7xl font-bold leading-tight flex items-center justify-center gap-3 flex-wrap">
             Vocari <span className="text-primary">AI</span>
+            <span className="text-lg font-normal bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">beta</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">

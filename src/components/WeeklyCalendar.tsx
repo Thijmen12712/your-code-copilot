@@ -127,19 +127,27 @@ const WeeklyCalendar = () => {
               // Find appointments for this day and hour
               const dayAppointments = appointments.filter(apt => {
                 const aptDate = new Date(apt.day);
-                return aptDate.toDateString() === date.fullDate.toDateString() && apt.hour === hour;
+                const aptHour = Math.floor(apt.hour);
+                return aptDate.toDateString() === date.fullDate.toDateString() && aptHour === hour;
               });
               
               return <div key={dayIndex} className="h-20 p-1 border-l hover:bg-muted/30 transition-colors relative" style={{
                 background: hour % 2 === 0 ? 'hsl(var(--muted) / 0.3)' : 'transparent'
               }}>
-                      {dayAppointments.map((apt, idx) => (
-                        <div key={idx} className="absolute top-0.5 left-0.5 right-0.5 bg-accent/90 text-white rounded p-2 text-xs font-medium shadow flex items-center justify-center text-center leading-tight border border-accent" style={{
-                          height: `${(apt.duration / 60) * 80}px`
-                        }}>
-                          <span className="line-clamp-2">{apt.summary}</span>
-                        </div>
-                      ))}
+                      {dayAppointments.map((apt, idx) => {
+                        // Calculate minute offset within the hour (0-60 minutes)
+                        const minutes = (apt.hour % 1) * 60;
+                        const topOffset = (minutes / 60) * 80; // 80px is the height of each hour slot
+                        
+                        return (
+                          <div key={idx} className="absolute left-0.5 right-0.5 bg-accent/90 text-white rounded p-2 text-xs font-medium shadow flex items-center justify-center text-center leading-tight border border-accent" style={{
+                            top: `${topOffset + 2}px`,
+                            height: `${(apt.duration / 60) * 80}px`
+                          }}>
+                            <span className="line-clamp-2">{apt.summary}</span>
+                          </div>
+                        );
+                      })}
                     </div>;
             })}
               </div>)}
