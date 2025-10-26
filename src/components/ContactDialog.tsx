@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -48,35 +47,20 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // Send to Supabase edge function
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: { 
-          email: validation.data.email, 
-          message: validation.data.message 
-        }
-      });
-
-      if (error) throw error;
-
       // Send to n8n webhook
-      try {
-        await fetch(N8N_WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          mode: "no-cors",
-          body: JSON.stringify({
-            email: validation.data.email,
-            message: validation.data.message,
-            timestamp: new Date().toISOString(),
-            source: "contact_form"
-          }),
-        });
-      } catch (webhookError) {
-        console.error("n8n webhook error (non-critical):", webhookError);
-        // Don't fail the submission if webhook fails
-      }
+      await fetch(N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          email: validation.data.email,
+          message: validation.data.message,
+          timestamp: new Date().toISOString(),
+          source: "contact_form"
+        }),
+      });
 
       toast.success("Message sent successfully! I'll get back to you soon.");
       setEmail("");
