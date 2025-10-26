@@ -16,7 +16,8 @@ const contactSchema = z.object({
   message: z.string()
     .trim()
     .min(1, { message: "Message cannot be empty" })
-    .max(2000, { message: "Message must be less than 2000 characters" })
+    .max(2000, { message: "Message must be less than 2000 characters" }),
+  n8nWebhook: z.string().optional()
 });
 
 interface ContactDialogProps {
@@ -28,6 +29,9 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // n8n webhook URL - replace with your actual webhook URL
+  const N8N_WEBHOOK_URL = "https://your-n8n-instance.com/webhook/contact-form";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,6 +48,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
     setIsSubmitting(true);
 
     try {
+      // Send to Supabase edge function
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
         body: { 
           email: validation.data.email, 
@@ -52,6 +57,26 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       });
 
       if (error) throw error;
+
+      // Send to n8n webhook
+      try {
+        await fetch(N8N_WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify({
+            email: validation.data.email,
+            message: validation.data.message,
+            timestamp: new Date().toISOString(),
+            source: "contact_form"
+          }),
+        });
+      } catch (webhookError) {
+        console.error("n8n webhook error (non-critical):", webhookError);
+        // Don't fail the submission if webhook fails
+      }
 
       toast.success("Message sent successfully! I'll get back to you soon.");
       setEmail("");
@@ -96,7 +121,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
             <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
-              placeholder="Thijmen is een koning"
+              placeholder="Your message here"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required

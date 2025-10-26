@@ -82,6 +82,76 @@ const Pricing = () => {
             </Card>
           </div>
 
+          {/* Beta Test Fase Section */}
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-10 space-y-6 bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200/50 relative overflow-hidden">
+              {/* Animated background elements */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-200/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-200/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+              
+              <div className="relative z-10 space-y-6">
+                <div className="text-center space-y-3">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-300">
+                    <Sparkles className="w-4 h-4 text-amber-600 animate-pulse" />
+                    <span className="text-sm font-semibold text-amber-800">We zijn in testfase!</span>
+                    <Sparkles className="w-4 h-4 text-amber-600 animate-pulse" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-amber-900">
+                    Help ons groeien, profiteer van exclusieve voordelen
+                  </h3>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 space-y-3 border border-amber-200/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+                      <Sparkles className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Samen ontwikkelen</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Jouw feedback helpt ons de perfecte AI-receptionist te bouwen. Als early adopter bepaal jij mee hoe onze dienst zich ontwikkelt.
+                    </p>
+                  </div>
+
+                  <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 space-y-3 border border-amber-200/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Exclusieve voorwaarden</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Beta-gebruikers krijgen blijvende voordelen, zelfs na de officiële lancering. Vroeg instappen = langdurig profiteren.
+                    </p>
+                  </div>
+
+                  <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 space-y-3 border border-amber-200/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Direct support</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Als testgebruiker krijg je directe toegang tot ons team. Vragen? Wensen? We staan voor je klaar en passen ons aan jouw behoeften aan.
+                    </p>
+                  </div>
+
+                  <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 space-y-3 border border-amber-200/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                      <Calendar className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="font-semibold text-lg">Geen verplichtingen</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      We zijn in de testfase, dus geen lange contracten of verplichtingen. Probeer het uit en besluit daarna wat het beste bij je past.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center pt-4">
+                  <p className="text-sm text-muted-foreground italic">
+                    ⚡ Beperkt aantal plekken beschikbaar tijdens de beta-fase
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+
           {/* Wat is er Inbegrepen */}
           <div className="space-y-12">
             <h2 className="text-3xl md:text-4xl font-bold text-center">
@@ -173,8 +243,9 @@ const Pricing = () => {
                 size="lg" 
                 variant="outline"
                 className="text-lg bg-white/10 border-white/20 text-white hover:bg-white/20"
+                asChild
               >
-                Meer Informatie
+                <a href="/about">Meer Informatie</a>
               </Button>
             </div>
             <p className="text-sm opacity-75 pt-4">

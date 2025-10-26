@@ -126,8 +126,11 @@ const WeeklyCalendar = () => {
                 {weekDates.map((date, dayIndex) => {
               // Find appointments for this day and hour
               const dayAppointments = appointments.filter(apt => {
+                // Parse the appointment day and adjust for timezone offset
                 const aptDate = new Date(apt.day);
-                const aptHour = Math.floor(apt.hour);
+                // Get the hour accounting for the UTC offset (add 2 hours to compensate)
+                const aptHourAdjusted = apt.hour + 2;
+                const aptHour = Math.floor(aptHourAdjusted);
                 return aptDate.toDateString() === date.fullDate.toDateString() && aptHour === hour;
               });
               
@@ -135,8 +138,10 @@ const WeeklyCalendar = () => {
                 background: hour % 2 === 0 ? 'hsl(var(--muted) / 0.3)' : 'transparent'
               }}>
                       {dayAppointments.map((apt, idx) => {
+                        // Adjust hour for timezone (add 2 hours)
+                        const aptHourAdjusted = apt.hour + 2;
                         // Calculate minute offset within the hour (0-60 minutes)
-                        const minutes = (apt.hour % 1) * 60;
+                        const minutes = (aptHourAdjusted % 1) * 60;
                         const topOffset = (minutes / 60) * 80; // 80px is the height of each hour slot
                         
                         return (

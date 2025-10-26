@@ -172,8 +172,9 @@ const AgentTest = () => {
                 size="lg" 
                 variant="outline"
                 className="text-lg bg-white/10 border-white/20 text-white hover:bg-white/20"
+                asChild
               >
-                Meer Informatie
+                <a href="/about">Meer Informatie</a>
               </Button>
             </div>
             <p className="text-sm opacity-75 pt-4">
