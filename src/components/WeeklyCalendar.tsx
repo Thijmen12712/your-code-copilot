@@ -10,10 +10,10 @@ const WeeklyCalendar = () => {
   const [appointments, setAppointments] = useState<any[]>([]);
   const { toast } = useToast();
 
-  // Generate hours (8 AM to 8 PM)
+  // Generate hours (9 AM to 9 PM)
   const hours = Array.from({
     length: 13
-  }, (_, i) => i + 8);
+  }, (_, i) => i + 9);
 
   // Get current week dates
   const getWeekDates = (offset: number) => {
@@ -126,11 +126,9 @@ const WeeklyCalendar = () => {
                 {weekDates.map((date, dayIndex) => {
               // Find appointments for this day and hour
               const dayAppointments = appointments.filter(apt => {
-                // Parse the appointment day and adjust for timezone offset
                 const aptDate = new Date(apt.day);
-                // Get the hour accounting for the UTC offset (add 2 hours to compensate)
-                const aptHourAdjusted = apt.hour + 2;
-                const aptHour = Math.floor(aptHourAdjusted);
+                // Use the hour directly from the database (already in correct timezone)
+                const aptHour = Math.floor(apt.hour);
                 return aptDate.toDateString() === date.fullDate.toDateString() && aptHour === hour;
               });
               
@@ -138,18 +136,32 @@ const WeeklyCalendar = () => {
                 background: hour % 2 === 0 ? 'hsl(var(--muted) / 0.3)' : 'transparent'
               }}>
                       {dayAppointments.map((apt, idx) => {
-                        // Adjust hour for timezone (add 2 hours)
-                        const aptHourAdjusted = apt.hour + 2;
                         // Calculate minute offset within the hour (0-60 minutes)
-                        const minutes = (aptHourAdjusted % 1) * 60;
+                        const minutes = (apt.hour % 1) * 60;
                         const topOffset = (minutes / 60) * 80; // 80px is the height of each hour slot
                         
+                        // Calculate end time for display
+                        const startHour = Math.floor(apt.hour);
+                        const endHour = Math.floor(apt.hour + (apt.duration / 60));
+                        const startMinute = Math.floor(minutes);
+                        const endMinute = Math.floor(((apt.hour + (apt.duration / 60)) % 1) * 60);
+                        
+                        const formatTime = (h: number, m: number) => {
+                          const period = h >= 12 ? 'pm' : 'am';
+                          const displayHour = h > 12 ? h - 12 : h === 0 ? 12 : h;
+                          return `${displayHour}${m > 0 ? `:${m.toString().padStart(2, '0')}` : ''}${period}`;
+                        };
+                        
+                        const timeRange = `${formatTime(startHour, startMinute)} - ${formatTime(endHour, endMinute)}`;
+                        
                         return (
-                          <div key={idx} className="absolute left-0.5 right-0.5 bg-accent/90 text-white rounded p-2 text-xs font-medium shadow flex items-center justify-center text-center leading-tight border border-accent" style={{
+                          <div key={idx} className="absolute left-0.5 right-0.5 bg-primary text-white rounded-lg p-2 text-xs font-medium shadow-lg flex flex-col justify-center leading-tight border border-primary/20" style={{
                             top: `${topOffset + 2}px`,
-                            height: `${(apt.duration / 60) * 80}px`
+                            height: `${(apt.duration / 60) * 80}px`,
+                            minHeight: '60px'
                           }}>
-                            <span className="line-clamp-2">{apt.summary}</span>
+                            <div className="font-semibold line-clamp-2 mb-1">{apt.summary}</div>
+                            <div className="text-[10px] opacity-90">{timeRange}</div>
                           </div>
                         );
                       })}

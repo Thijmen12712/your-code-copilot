@@ -98,6 +98,53 @@ const Index = () => {
         <AudioTestSection />
       </section>
 
+      {/* Beta Test Phase Section */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="max-w-4xl mx-auto">
+          <Card className="p-12 text-center space-y-6 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 border-2 border-primary/20 shadow-xl animate-fade-in">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-4 animate-pulse">
+              <Sparkles className="w-10 h-10 text-primary" />
+            </div>
+            
+            <div className="space-y-3">
+              <div className="inline-block px-4 py-2 rounded-full bg-primary/20 border border-primary/30 text-primary text-sm font-semibold animate-scale-in">
+                🚀 Beta Test Fase
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold">Help Ons Groeien</h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Vocari AI is momenteel in beta fase. We zijn actief op zoek naar bedrijven die willen 
+                helpen ons product te verfijnen en te verbeteren.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 pt-6">
+              <div className="p-6 rounded-xl bg-card/50 border hover:shadow-lg transition-all hover-scale">
+                <Zap className="w-8 h-8 text-primary mx-auto mb-3" />
+                <h4 className="font-semibold mb-2">Early Adopter Voordelen</h4>
+                <p className="text-sm text-muted-foreground">Krijg toegang tot premium functies tegen gereduceerde prijzen</p>
+              </div>
+              
+              <div className="p-6 rounded-xl bg-card/50 border hover:shadow-lg transition-all hover-scale">
+                <Shield className="w-8 h-8 text-accent mx-auto mb-3" />
+                <p className="font-semibold mb-2">Direct Invloed</p>
+                <p className="text-sm text-muted-foreground">Jouw feedback bepaalt de ontwikkeling van ons product</p>
+              </div>
+              
+              <div className="p-6 rounded-xl bg-card/50 border hover:shadow-lg transition-all hover-scale">
+                <Phone className="w-8 h-8 text-primary mx-auto mb-3" />
+                <p className="font-semibold mb-2">Persoonlijke Support</p>
+                <p className="text-sm text-muted-foreground">Directe lijn naar ons ontwikkelteam voor optimale service</p>
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground pt-4 max-w-xl mx-auto">
+              We zoeken naar innovatieve bedrijven die samen met ons de toekomst van AI-receptionisten 
+              willen vormgeven. Word partner in onze groei!
+            </p>
+          </Card>
+        </div>
+      </section>
+
       {/* Why Choose Vocari AI Section */}
       <section className="container mx-auto px-6 py-20">
         <div className="max-w-6xl mx-auto">
