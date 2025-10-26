@@ -30,8 +30,8 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  // n8n webhook URL - replace with your actual webhook URL
-  const N8N_WEBHOOK_URL = "https://your-n8n-instance.com/webhook/contact-form";
+  // n8n webhook URL
+  const N8N_WEBHOOK_URL = "https://thijmenruizendaal.app.n8n.cloud/webhook/5aed2382-12db-4cd6-9cc0-bf0534896f8d";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
