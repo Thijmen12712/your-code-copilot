@@ -132,9 +132,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Why Choose <span className="font-bold">Vocari AI</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Cutting-edge artificial intelligence designed for modern businesses
-            </p>
+            <p className="text-lg text-muted-foreground">Verfijnde AI receptionisten voor alle soorten bedrijven.</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -142,7 +140,7 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold">Intelligent Solutions</h3>
+              <h3 className="text-xl font-semibold">Oplossingen op maat</h3>
               <p className="text-muted-foreground">
                 Leverage advanced AI algorithms to solve complex business challenges with unprecedented efficiency.
               </p>
@@ -152,7 +150,7 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
                 <Zap className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold">Lightning Fast</h3>
+              <h3 className="text-xl font-semibold">Bliksem snel</h3>
               <p className="text-muted-foreground">
                 Experience real-time processing and instant insights that keep your business ahead of the curve.
               </p>
@@ -162,7 +160,7 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
                 <Target className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold">Precision Targeting</h3>
+              <h3 className="text-xl font-semibold">Doelgerichte conversaties</h3>
               <p className="text-muted-foreground">
                 Achieve pinpoint accuracy in decision-making with data-driven AI recommendations.
               </p>
@@ -172,10 +170,8 @@ const Index = () => {
               <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
                 <Shield className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold">Secure & Reliable</h3>
-              <p className="text-muted-foreground">
-                Enterprise-grade security ensuring your data and operations remain protected at all times.
-              </p>
+              <h3 className="text-xl font-semibold">Veilig & vertrouwbaar</h3>
+              <p className="text-muted-foreground">Jouw data blijft altijd in goede handen. Onze AI-receptionisten voldoen aan  beveiligingsnormen en behandelen elke interactie met maximale zorg en privacy.</p>
             </Card>
           </div>
         </div>
@@ -191,9 +187,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Frequently Asked <span className="font-bold">Questions</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Everything you need to know about Vocari AI
-            </p>
+            <p className="text-lg text-muted-foreground">Alles wat je moet weten over Vocari AI</p>
           </div>
 
           <Accordion type="single" collapsible className="w-full space-y-4">
