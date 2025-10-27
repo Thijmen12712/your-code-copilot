@@ -8,18 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Phone, Scissors, Sparkles, Zap, Target, Shield, HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
-
-  return (
-    <div className="min-h-screen light-gradient-bg">
+  return <div className="min-h-screen light-gradient-bg">
       <Navigation />
       
       {/* Hero Section */}
@@ -41,20 +33,11 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button 
-              size="lg" 
-              className="text-lg gap-2" 
-              onClick={() => setIsContactOpen(true)}
-            >
+            <Button size="lg" className="text-lg gap-2" onClick={() => setIsContactOpen(true)}>
               <Phone className="w-5 h-5" />
               Contact Me
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-lg border-2"
-              asChild
-            >
+            <Button size="lg" variant="outline" className="text-lg border-2" asChild>
               <Link to="/about">
                 Find Out More
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -111,10 +94,7 @@ const Index = () => {
                 🚀 Beta Test Fase
               </div>
               <h3 className="text-3xl md:text-4xl font-bold">Help Ons Groeien</h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Vocari AI is momenteel in beta fase. We zijn actief op zoek naar bedrijven die willen 
-                helpen ons product te verfijnen en te verbeteren.
-              </p>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Vocari AI is momenteel in test fase. We zijn actief op zoek naar bedrijven die willen helpen ons product te verfijnen en te verbeteren.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 pt-6">
@@ -275,8 +255,6 @@ const Index = () => {
       </section>
       
       <ContactDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
