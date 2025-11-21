@@ -62,7 +62,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
         }),
       });
 
-      toast.success("Message sent successfully! I'll get back to you soon.");
+      toast.success("Message sent successfully! We'll get back to you soon.");
       setEmail("");
       setMessage("");
       onOpenChange(false);
@@ -79,20 +79,20 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       <DialogContent className="glass-card sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle className="text-2xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Get in Touch
+            Contacteer ons
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            Send me a message and I'll get back to you as soon as possible.
+            Heb je vragen of wil je meer weten? Stuur gerust een berichtje!
           </DialogDescription>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-6 mt-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email Address</Label>
+            <Label htmlFor="email">E-mailadres</Label>
             <Input
               id="email"
               type="email"
-              placeholder="your.email@example.com"
+              placeholder="jouw.email@voorbeeld.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -102,10 +102,10 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">Bericht</Label>
             <Textarea
               id="message"
-              placeholder="Your message here"
+              placeholder="Jouw bericht hier..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
@@ -126,14 +126,14 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
               className="flex-1 border-border/50"
               disabled={isSubmitting}
             >
-              Cancel
+              Annuleer
             </Button>
             <Button
               type="submit"
               className="flex-1 bg-accent hover:bg-accent/90"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Versturen..." : "Sturen"}
             </Button>
           </div>
         </form>

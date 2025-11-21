@@ -129,7 +129,7 @@ const SavingsCalculator = () => {
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground bg-yellow-50 border border-yellow-100 rounded-lg p-4">
           <Lightbulb className="w-4 h-4 text-yellow-600" />
           <p>
-            <span className="font-semibold">Tip:</span> Tijdens de beta krijg je 200 gratis minuten per maand!
+            <span className="font-semibold">Tip:</span> Tijdens de beta krijg je 200 minuten gratis!
           </p>
         </div>
       </Card>

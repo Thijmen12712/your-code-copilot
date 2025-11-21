@@ -142,7 +142,7 @@ const AgentTest = () => {
               </p>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                <span className="text-sm font-medium text-green-700">Live updates - geen refresh nodig</span>
+                <span className="text-sm font-medium text-green-700">Live updates - refresh indien nodig</span>
               </div>
             </div>
 
@@ -178,7 +178,7 @@ const AgentTest = () => {
               </Button>
             </div>
             <p className="text-sm opacity-75 pt-4">
-              🎉 Beta aanbieding: Gratis integratie + 200 gratis minuten per maand
+              🎉 Beta aanbieding: Gratis integratie + 200 gratis minuten 
             </p>
           </div>
         </div>

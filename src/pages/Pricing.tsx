@@ -62,7 +62,7 @@ const Pricing = () => {
                   <div>
                     <h3 className="font-semibold mb-2">200 Minuten Gratis</h3>
                     <p className="text-sm text-muted-foreground">
-                      Ontvang maandelijks 200 minuten aan gratis beltijd voor je AI-agent. Perfect om mee te starten!
+                      Ontvang eenmalig 200 minuten aan gratis beltijd voor je AI-agent. Perfect om mee te starten!
                     </p>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ const Pricing = () => {
                 <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
                   <Phone className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Eigen AI Telefoonnummer</h3>
+                <h3 className="text-xl font-semibold">Eigen Telefoonnummer</h3>
                 <p className="text-muted-foreground">
                   Nederlands sprekende AI-agent voor jouw bedrijf
                 </p>
@@ -175,7 +175,7 @@ const Pricing = () => {
                 </div>
                 <h3 className="text-xl font-semibold">Google Calendar Sync</h3>
                 <p className="text-muted-foreground">
-                  Automatische koppeling met je bestaande agenda
+                  Automatische koppeling met je bestaande Google Calendar agenda
                 </p>
               </Card>
 
@@ -195,7 +195,7 @@ const Pricing = () => {
                 </div>
                 <h3 className="text-xl font-semibold">200 Gratis Minuten</h3>
                 <p className="text-muted-foreground">
-                  Elke maand opnieuw, geen limiet op aantal oproepen
+                  200 gratis minuten, perfect om mee te starten
                 </p>
               </Card>
 
@@ -203,9 +203,9 @@ const Pricing = () => {
                 <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Real-time Updates</h3>
+                <h3 className="text-xl font-semibold">Altijd bereikbaar</h3>
                 <p className="text-muted-foreground">
-                  Direct zichtbaar in je dashboard
+                  De AI agent is 24/7 beschikbaar voor je klanten
                 </p>
               </Card>
 
@@ -237,7 +237,7 @@ const Pricing = () => {
                 onClick={() => setIsContactOpen(true)}
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Probeer de AI Agent
+                Neem Contact Op
               </Button>
               <Button 
                 size="lg" 
@@ -251,7 +251,7 @@ const Pricing = () => {
             <p className="text-sm opacity-75 pt-4">
               Heb je vragen? <span className="font-semibold">We helpen je graag verder!</span>
               <br />
-              Contact ons via de homepagina of bel naar onze AI-agent voor meer informatie.
+              Contact ons via de homepagina of om onze service uit te proberen bel je het nummer op de homepagina.
             </p>
           </div>
         </div>

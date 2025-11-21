@@ -19,10 +19,10 @@ const Navigation = () => {
               <Link to="/about">About</Link>
             </Button>
             <Button variant={isActive("/pricing") ? "secondary" : "ghost"} asChild className="transition-all">
-              <Link to="/pricing">Pricing</Link>
+              <Link to="/pricing">Prijzen</Link>
             </Button>
             <Button variant={isActive("/agent-test") ? "secondary" : "ghost"} asChild className="transition-all">
-              <Link to="/agent-test">Test Agent</Link>
+              <Link to="/agent-test">Testen</Link>
             </Button>
           </div>
         </div>

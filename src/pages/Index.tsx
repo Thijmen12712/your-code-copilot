@@ -11,7 +11,8 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 const Index = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  return <div className="min-h-screen light-gradient-bg">
+  return (
+    <div className="min-h-screen light-gradient-bg">
       <Navigation />
       
       {/* Hero Section */}
@@ -19,7 +20,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           <div className="inline-block">
             <span className="px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium">
-              AI Receptionists
+              AI Receptionisten
             </span>
           </div>
           
@@ -29,17 +30,17 @@ const Index = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Transform your business with cutting-edge artificial intelligence solutions
+            De toekomst van klantcontact spreekt!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button size="lg" className="text-lg gap-2" onClick={() => setIsContactOpen(true)}>
               <Phone className="w-5 h-5" />
-              Contact Me
+              Contact 
             </Button>
             <Button size="lg" variant="outline" className="text-lg border-2" asChild>
               <Link to="/about">
-                Find Out More
+                Meer informatie
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
@@ -130,7 +131,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Why Choose <span className="font-bold">Vocari AI</span>
+              Waarom kiezen voor <span className="font-bold">Vocari AI</span>
             </h2>
             <p className="text-lg text-muted-foreground">Verfijnde AI receptionisten voor alle soorten bedrijven.</p>
           </div>
@@ -142,7 +143,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-semibold">Oplossingen op maat</h3>
               <p className="text-muted-foreground">
-                Leverage advanced AI algorithms to solve complex business challenges with unprecedented efficiency.
+                Geen standaard chatbot, maar een receptionist die jouw merk, tone of voice en processen tot in detail weerspiegelt. Persoonlijk, efficiënt en volledig afgestemd op jouw organisatie.
               </p>
             </Card>
 
@@ -152,7 +153,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-semibold">Bliksem snel</h3>
               <p className="text-muted-foreground">
-                Experience real-time processing and instant insights that keep your business ahead of the curve.
+               Binnen seconden antwoord. Onze AI-receptionisten reageren direct, zodat je klanten nooit hoeven te wachten — 24/7, zonder onderbreking.
               </p>
             </Card>
 
@@ -162,7 +163,7 @@ const Index = () => {
               </div>
               <h3 className="text-xl font-semibold">Doelgerichte conversaties</h3>
               <p className="text-muted-foreground">
-                Achieve pinpoint accuracy in decision-making with data-driven AI recommendations.
+                Geen loze praatjes — alleen gesprekken die écht helpen. Onze AI begrijpt context, intentie en prioriteit, zodat elke klant snel krijgt wat hij zoekt.
               </p>
             </Card>
 
@@ -193,55 +194,55 @@ const Index = () => {
           <Accordion type="single" collapsible className="w-full space-y-4">
             <AccordionItem value="item-1" className="border rounded-lg px-6 bg-card">
               <AccordionTrigger className="text-left font-semibold">
-                What services does Vocari AI offer?
+                Welke diensten heeft Vocari AI te bieden?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Vocari AI provides cutting-edge AI call agents and receptionist solutions designed specifically for local businesses. We specialize in creating personalized AI solutions that handle customer interactions, appointments, and inquiries 24/7.
+                Vocari AI biedt op maat gemaakte AI-receptionisten die telefoongesprekken kunnen afhandelen, afspraken kunnen plannen, afspraken kunnen annuleren, afspraken kunnen verzetten en klantvragen kunnen beantwoorden. Onze AI-agenten zijn 24/7 beschikbaar en kunnen worden aangepast aan de specifieke behoeften van jouw bedrijf.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border rounded-lg px-6 bg-card">
               <AccordionTrigger className="text-left font-semibold">
-                How long does implementation take?
+                Hoe lang duurt de implementatie van een AI-agent?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Implementation typically takes 1-2 weeks depending on your specific requirements. We work closely with you to ensure a smooth integration with your existing systems and workflows.
+                De implementatietijd varieert afhankelijk van de complexiteit van jouw bedrijfsbehoeften. Over het algemeen duurt het hele process van consultatie tot het eind product tussen 1-3 weken. 
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border rounded-lg px-6 bg-card">
               <AccordionTrigger className="text-left font-semibold">
-                Do you offer ongoing support?
+                Bieden jullie ondersteuning en onderhoud na de implementatie?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Yes, we provide comprehensive ongoing support and maintenance. Our team is available to help you optimize your AI agents and ensure they continue to meet your business needs as they evolve.
+               Jazeker, we bevinden ons momenteel in de test fase en bieden daarom uitgebreide ondersteuning en onderhoud aan al onze klanten om ervoor te zorgen dat onze AI-agenten meer verfijnd worden en optimaal gaan en blijven presteren.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border rounded-lg px-6 bg-card">
               <AccordionTrigger className="text-left font-semibold">
-                What industries do you work with?
+                Voor welke soorten bedrijven is Vocari AI geschikt?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                We primarily focus on local businesses including salons, barbershops, medical practices, law firms, and other service-based industries that benefit from automated appointment scheduling and customer service.
+               Vocari AI is geschikt voor een breed scala aan bedrijven. Momenteel zijn we gefocust op kapperszaken en andere kleine diensverlenende bedrijven, maar onze AI-receptionisten kunnen worden aangepast aan de behoeften van vrijwel elk type bedrijf dat telefonische klantenservice vereist.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-5" className="border rounded-lg px-6 bg-card">
               <AccordionTrigger className="text-left font-semibold">
-                How do I get started?
+                Hoe wordt jullie software geïntegreerd met mijn bedrijfs systemen?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Getting started is easy! Simply contact us through our contact form or try our demo AI agent by calling the number provided. We'll schedule a free consultation to discuss your specific needs and create a customized solution.
+               Vocari AI werkt momenteel uitsluitend met Google Calendar voor het plannen van afspraken. We kunnen echter altijd kijken of er integraties mogelijk zijn met andere systemen vooral zoals websites of CRM-systemen. Wij bieden momenteel ook een nieuw telefoonnummer aan waarop onze AI-agenten worden gehost
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-6" className="border rounded-lg px-6 bg-card">
               <AccordionTrigger className="text-left font-semibold">
-                What are your pricing models?
+                Wat zijn de kosten van Vocari AI?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                We offer flexible pricing models tailored to your business size and needs. Contact us for a personalized quote based on call volume, features required, and level of customization needed for your AI agent.
+                Wij zijn momenteel in de beta test fase en bieden daarom gratis integratie aan voor een beperkte tijd. Dit is zodat wij waardevolle feedback kunnen verzamelen en onze AI-receptionisten kunnen verbeteren. Na de test fase zullen we verschillende prijsplannen introduceren.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -249,6 +250,8 @@ const Index = () => {
       </section>
       
       <ContactDialog open={isContactOpen} onOpenChange={setIsContactOpen} />
-    </div>;
-};
+    </div>
+  );
+}
+
 export default Index;

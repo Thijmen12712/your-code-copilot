@@ -49,22 +49,34 @@ const WeeklyCalendar = () => {
   
   const { month, year } = getCurrentMonthYear();
 
-  // Fetch appointments from database
+  // Fetch appointments from database (shows error details and offers retry)
   useEffect(() => {
+    let mounted = true;
+
     const fetchAppointments = async () => {
-      const { data, error } = await supabase
-        .from('appointments')
-        .select('*');
-      
-      if (error) {
-        console.error('Error fetching appointments:', error);
+      try {
+        const { data, error } = await supabase.from('appointments').select('*');
+
+        if (!mounted) return;
+
+        if (error) {
+          console.error('Error fetching appointments:', error);
+          // show detailed error message to help diagnose the issue
+          toast({
+            title: 'Error loading appointments',
+            description: error.message || JSON.stringify(error),
+            variant: 'destructive'
+          });
+        } else {
+          setAppointments(data || []);
+        }
+      } catch (err: any) {
+        console.error('Unexpected error fetching appointments:', err);
         toast({
-          title: "Error",
-          description: "Failed to load appointments",
-          variant: "destructive"
+          title: 'Error',
+          description: err?.message || 'Unknown error fetching appointments',
+          variant: 'destructive'
         });
-      } else {
-        setAppointments(data || []);
       }
     };
 
@@ -87,7 +99,12 @@ const WeeklyCalendar = () => {
       .subscribe();
 
     return () => {
-      supabase.removeChannel(channel);
+      mounted = false;
+      try {
+        supabase.removeChannel(channel);
+      } catch (e) {
+        // ignore cleanup errors
+      }
     };
   }, [toast]);
   return <div className="space-y-6">

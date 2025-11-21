@@ -17,13 +17,13 @@ const About = () => {
                 <Sparkles className="w-8 h-8 text-white" />
               </div>
               <h1 className="text-4xl md:text-5xl font-bold">
-                About <span className="font-bold">Vocari AI</span>
+                Over <span className="font-bold">Vocari AI</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Founded in 2025, Vocari AI emerged from a vision to revolutionize how businesses interact with their customers through intelligent automation. What started as a passion project has quickly evolved into a cutting-edge AI solutions provider, combining the latest advancements in artificial intelligence with practical, real-world applications.
+                Begonnen in 2025, Vocari AI is een jong en dynamisch bedrijf dat zich richt op het leveren van AI-receptionisten voor bedrijven in Nederland. We zijn gevestigd in Wassenaar en bestaan uit een klein team van gepassioneerde die volop geloven in de kracht van kunstmatige intelligentie om bedrijfsprocessen te transformeren.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Our journey began with a simple question: How can we make AI accessible and truly useful for businesses of all sizes? Today, we're building the future of customer engagement, one intelligent conversation at a time.
+                De reis begon met een eenvoudige maar krachtige missie: het toegankelijk maken van geavanceerde AI-technologieën voor bedrijven. We zijn begonnen als een startup met een visie om innovatieve AI-oplossingen te bieden die niet alleen technologisch geavanceerd zijn, maar ook praktisch en gebruikersvriendelijk.
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-[0_8px_24px_-6px_hsl(var(--primary)/0.3)]">
@@ -38,19 +38,19 @@ const About = () => {
           {/* Our Story Section */}
           <div className="space-y-8">
             <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Our <span className="font-bold">Story</span>
+              Ons <span className="font-bold">Verhaal</span>
             </h2>
             
             <Card className="p-8 md:p-12 bg-card border">
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p className="leading-relaxed mb-4">
-                  Vocari AI was founded with a clear mission: to bridge the gap between advanced artificial intelligence and everyday business needs. In an era where AI is transforming industries, we recognized that many businesses struggle to implement these technologies effectively.
+                  Vocari AI werd opgericht met een duidelijke visie: bedrijven in Nederland helpen hun volledige potentieel te bereiken door middel van AI-technologieën. We hebben de afgelopen maanden hard gewerkt om onze expertise op dit gebied te bouwen en onze eerste AI-oplossigen te ontwikkelen.
                 </p>
                 <p className="leading-relaxed mb-4">
-                  Our team of AI specialists and business strategists came together to create solutions that are not just technologically advanced, but genuinely practical. We focus on voice AI and intelligent automation that works seamlessly, handles real conversations, and delivers measurable results.
+                  Wij zijn momenteel nog in de test fase, waarbij we onze software nog grondig testen en verfijnen om ervoor te zorgen dat we alleen de beste kwaliteit leveren aan onze klanten. We hopen daarom binnekort onze eerste test klanten te mogen verwelkomen om samen met hen de toekomst van AI-gedreven bedrijfsoplossingen vorm te geven.
                 </p>
                 <p className="leading-relaxed">
-                  As a young company, we're agile, innovative, and deeply committed to our clients' success. We're not bound by legacy systems or outdated thinking – instead, we leverage the very latest in AI technology to create solutions that are modern, efficient, and built for the future.
+                  Als een jong bedrijf zijn we enthousiast over de mogelijkheden die voor ons liggen en kijken we ernaar uit om samen met onze klanten te groeien en te innoveren in de snel evoluerende wereld van kunstmatige intelligentie.
                 </p>
               </div>
             </Card>
@@ -59,7 +59,7 @@ const About = () => {
           {/* Our Values Section */}
           <div className="space-y-12">
             <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Our <span className="font-bold">Values</span>
+              Onze <span className="font-bold">Waardes</span>
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -67,9 +67,9 @@ const About = () => {
                 <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center">
                   <Lightbulb className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Innovation First</h3>
+                <h3 className="text-xl font-semibold">Innovatie eerst</h3>
                 <p className="text-muted-foreground">
-                  We stay at the forefront of AI technology, constantly exploring new possibilities and pushing boundaries to deliver breakthrough solutions.
+                  Wij blijven in de voorhoede van AI-ontwikkeling en integreren de nieuwste technologiëen in onze oplossingen om onze klaten een concurrentievoordeel te bieden.
                 </p>
               </Card>
 
@@ -77,9 +77,9 @@ const About = () => {
                 <div className="w-16 h-16 rounded-2xl bg-accent flex items-center justify-center">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Client Partnership</h3>
+                <h3 className="text-xl font-semibold">B2B samenwerking</h3>
                 <p className="text-muted-foreground">
-                  Your success is our success. We work closely with clients to understand their unique challenges and create tailored AI solutions.
+                  Jouw succes is ons succes. We werken nauw samen met klanten om hun unieke uitdagingen te begrijpen en op maat gemaakte oplossingen te creëren
                 </p>
               </Card>
 
@@ -87,9 +87,9 @@ const About = () => {
                 <div className="w-16 h-16 rounded-2xl bg-green-500 flex items-center justify-center">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Excellence</h3>
+                <h3 className="text-xl font-semibold">Uitmuntendheid</h3>
                 <p className="text-muted-foreground">
-                  We maintain the highest standards in everything we do, from code quality to customer service, ensuring exceptional results.
+                  We streven naar uitmuntendheid in alles wat we doen, van de technologie die we bouwen tot het de ondersteuning aan de klanten die we bieden.
                 </p>
               </Card>
             </div>
@@ -98,7 +98,7 @@ const About = () => {
           {/* Why Choose Us Section */}
           <div className="space-y-12">
             <h2 className="text-3xl md:text-4xl font-bold text-center">
-              Why <span className="font-bold">Choose Us</span>
+              Waarom <span className="font-bold">Ons Kiezen</span>
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
@@ -106,9 +106,9 @@ const About = () => {
                 <div className="w-16 h-16 rounded-2xl bg-blue-500 flex items-center justify-center">
                   <TrendingUp className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Cutting-Edge Technology</h3>
+                <h3 className="text-xl font-semibold">Innoverende technologieën</h3>
                 <p className="text-muted-foreground">
-                  As a new company, we're built on the latest AI models and technologies. No legacy systems, no outdated approaches – just modern, powerful solutions.
+                  We maken gebruik van de nieuwste AI-ontwikkelingen om ervoor te zorgen dat jouw bedrijf altijd voorop loopt in de markt.
                 </p>
               </Card>
 
@@ -116,9 +116,9 @@ const About = () => {
                 <div className="w-16 h-16 rounded-2xl bg-purple-500 flex items-center justify-center">
                   <Globe className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Agile & Responsive</h3>
+                <h3 className="text-xl font-semibold">Wendbaar & Responsief</h3>
                 <p className="text-muted-foreground">
-                  Being a nimble startup means we can adapt quickly to your needs, implement changes rapidly, and provide personalized attention to every client.
+                  Als een jong en dynamisch bedrijf kunnen we snel inspelen op veranderingen in de markt en de behoeften van onze klanten.
                 </p>
               </Card>
             </div>
